@@ -1,6 +1,7 @@
 {
   imports = [
     ./alpha.nix
+		./bufferline.nix
     ./lsp.nix
     ./lualine.nix
     ./neo-ls.nix
