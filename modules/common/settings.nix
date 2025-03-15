@@ -12,7 +12,10 @@
     };
   };
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+		allowUnfree = true;
+		nvidia.acceptLicense = true;
+	};
 
   time.timeZone = "Europe/Astrakhan";
 

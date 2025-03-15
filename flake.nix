@@ -20,6 +20,7 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+      commonModules = [ ./modules ];
     in
     {
       homeConfigurations.kamusari = home-manager.lib.homeManagerConfiguration {
@@ -39,9 +40,19 @@
           };
         };
 
-        modules = [
-          ./modules/bundle.nix
-        ];
+        modules = commonModules;
+      };
+
+      nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs;
+          unstable = import nixpkgs-unstable {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        };
+
+        modules = commonModules;
       };
     };
 }

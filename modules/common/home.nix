@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   home-manager = {
     users = {
-      kamusari = import ../home-manager/home.nix;
+      kamusari = import ../../home-manager/home.nix;
     };
     backupFileExtension = "backup";
   };

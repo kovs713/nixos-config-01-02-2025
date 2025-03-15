@@ -11,6 +11,7 @@
     git
     htop
     lazygit
+    neofetch
     tmux
     toilet
     unzip
@@ -66,6 +67,4 @@
     obsidian
     postman
   ];
-  # ++ (with pkgs; [
-  # ]);
 }
