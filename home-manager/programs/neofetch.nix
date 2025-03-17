@@ -1,0 +1,96 @@
+{ pkgs, ... }: {
+  home.packages = with pkgs; [ neofetch ];
+
+  xdg.configFile."neofetch/config.conf".text = ''
+    print_info() {
+    	info title
+    	info "''${cl1} ╭─󰍳Distro" distro
+    	info "''${cl1} ├─Kernel" kernel
+    	info "''${cl1} ├─User" users
+    	info "''${cl1} ├─󰏗Packages" packages
+    	info "''${cl1} ╰─Shell" shell
+    	info "''${cl2} ╭─WM" de
+    	info "''${cl2} ├─Terminal" term
+    	info "''${cl2} ├─󰂫Theme" theme
+    	info "''${cl2} ╰─󰂫Icons" icons
+    	info "''${cl3} ╭─Motherboard" model
+    	info "''${cl3} ├─󰍛CPU" cpu
+    	info "''${cl3} ├─󰍹GPU" gpu
+    	info "''${cl3} ├─GPU driver" gpu_driver
+    	info "''${cl3} ├─Resolution" resolution
+    	info "''${cl3} ├─Memory" memory
+    	info "''${cl3} ├─Disk" disk
+    	info "''${cl3} ╰─󰄉Uptime" uptime
+    	info cols
+    }
+
+      blue="\033[1;34m"
+      red="\033[1;31m"
+      reset="\033[0m"
+      cl0="''${reset}"
+      cl1="''${reset}"
+      cl2="''${blue}"
+      cl3="''${red}"
+
+    image_backend="ascii"
+    image_source="auto"
+    title_fqdn="off"
+    kernel_shorthand="on"
+    distro_shorthand="tiny"
+    uptime_shorthand="tiny"
+    memory_percent="on"
+    memory_unit="Gib"
+    package_managers="tiny"
+    shell_path="off"
+    shell_version="on"
+    speed_type="scaling_max_freq"
+    speed_shorthand="on"
+    cpu_brand="on"
+    cpu_speed="on"
+    cpu_cores="logical"
+    cpu_temp="on"
+    gpu_brand="on"
+    gpu_type="all"
+    refresh_rate="on"
+    gtk_shorthand="off"
+    gtk2="off"
+    gtk3="on"
+    public_ip_host="http://ident.me"
+    public_ip_timeout=2
+    de_version="on"
+    disk_show=(\'/\')
+    disk_percent="on"
+    colors=(distro)
+    bold="on"
+    underline_enabled="on"
+    underline_char="󰍴"
+    separator=" "
+    block_range=(1 15)
+    color_blocks="on"
+    block_width=4
+    block_height=1
+    col_offset="auto"
+    bar_char_elapsed="-"
+    bar_char_total="="
+    bar_length=15
+    bar_color_elapsed="distro"
+    bar_color_total="distro"
+    cpu_display="on"
+    memory_display="on"
+    battery_display="on"
+    disk_display="on"    
+		ascii_distro="auto"
+    ascii_colors=(distro)
+    ascii_bold="on"
+    image_loop="on"
+    crop_mode="normal"
+    crop_offset="center"
+    image_size="none"
+    gap=2
+    yoffset=0
+    xoffset=0
+    background_color=
+    stdout="off"
+    thumbnail_dir="''${XDG_CACHE_HOME:-''${HOME}/.cache}/thumbnails/neofetch"
+	'';
+}

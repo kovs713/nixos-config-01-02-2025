@@ -1,5 +1,5 @@
-{ unstable, ... }: {
-  environment.systemPackages = with unstable; [
+{ pkgs, ... }: {
+  environment.systemPackages = with pkgs; [
     # Terminal
     ghostty
 
@@ -8,14 +8,12 @@
     cmatrix
     fd
     fzf
-    git
     htop
     lazygit
-    neofetch
-    tmux
     toilet
     unzip
     wget
+    w3m
     yazi
     zsh
 
@@ -32,17 +30,18 @@
     pkg-config
 
     # Utilities
-    cliphist
     home-manager
+    hyprgraphics
+    hyprpaper
     hyprshot
     mako
     pavucontrol
-    swaybg
     wl-clipboard
     xdg-utils
 
     # GUI / Desktop extras
     bibata-cursors
+    cliphist
     gruvbox-gtk-theme
     rofi-wayland
     waybar
@@ -52,7 +51,6 @@
     google-chrome
     prismlauncher
     telegram-desktop
-    vesktop
 
     # LibreOffice
     libreoffice-qt
@@ -64,7 +62,8 @@
     maven
     mongosh
     nodejs_23
-    obsidian
-    postman
+
+    # Shit
+    pgmodeler
   ];
 }

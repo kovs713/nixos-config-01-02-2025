@@ -1,4 +1,4 @@
-{ unstable, ... }: {
+{ pkgs, ... }: {
   systemd = {
     services = {
       "getty@tty1".enable = false;
@@ -11,7 +11,7 @@
         wantedBy = [ "multi-user.target" ];
 
         serviceConfig = {
-          ExecStart = "${unstable.amnezia-vpn}/bin/AmneziaVPN-service";
+          ExecStart = "${pkgs.amnezia-vpn}/bin/AmneziaVPN-service";
           Restart = "always";
           Environment = "PATH=/run/current-system/sw/bin";
         };

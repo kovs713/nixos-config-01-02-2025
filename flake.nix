@@ -2,57 +2,51 @@
   description = "My nixos flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixcord = {
+      url = "github:kaylorben/nixcord";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs =
-    { nixpkgs
-    , nixpkgs-unstable
-    , home-manager
-    , ...
-    } @ inputs:
+  outputs = { nixpkgs, ... } @ inputs:
     let
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-      commonModules = [ ./modules ];
+      pkgs = import inputs.nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+        config.allowBroken = true;
+      };
     in
     {
-      homeConfigurations.kamusari = home-manager.lib.homeManagerConfiguration {
+      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        inherit pkgs;
+        modules = [
+          {
+            _module.args = { inherit inputs; };
+          }
+          inputs.home-manager.nixosModules.home-manager
+          ./modules
+        ];
+      };
+      homeConfigurations.kamusari = inputs.home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = { inherit inputs; };
         modules = [
           ./home-manager/home.nix
         ];
-      };
-
-      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit inputs;
-          unstable = import nixpkgs-unstable {
-            inherit system;
-            config.allowUnfree = true;
-          };
-        };
-
-        modules = commonModules;
-      };
-
-      nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit inputs;
-          unstable = import nixpkgs-unstable {
-            inherit system;
-            config.allowUnfree = true;
-          };
-        };
-
-        modules = commonModules;
       };
     };
 }

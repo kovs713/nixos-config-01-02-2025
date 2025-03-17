@@ -1,9 +1,10 @@
 {
   imports = [
-    ./alpha.nix
-		./bufferline.nix
+    ./bufferline.nix
+    ./cmp.nix
     ./lsp.nix
     ./lualine.nix
+    ./mini.nix
     ./neo-ls.nix
     ./neo-tree.nix
     ./telescope.nix
@@ -13,18 +14,18 @@
   ];
 
   programs.nixvim.plugins = {
-    web-devicons.enable = true;
+    commentary.enable = true;
 
-    comment.enable = true;
+    luasnip.enable = true;
 
     nvim-autopairs.enable = true;
 
-    wakatime.enable = true;
+    tailwind-tools.enable = true;
 
     vim-be-good.enable = true;
 
-    tailwind-tools.enable = true;
+    wakatime.enable = true;
 
-    luasnip.enable = true;
+    web-devicons.enable = true;
   };
 }

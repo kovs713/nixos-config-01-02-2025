@@ -44,9 +44,11 @@
 
         gopls.enable = true; # Go
 
-        graphql.enable = true; # GraphQL
+        # graphql.enable = true; # GraphQL
 
         jsonls.enable = true; # JSON
+
+        java_language_server.enable = true;
 
         kotlin_language_server.enable = true; # Kotlin
       };
@@ -79,21 +81,21 @@
       enable = true;
     };
 
-    lspkind = {
-      enable = true;
+    # lspkind = {
+    #   enable = true;
 
-      cmp = {
-        enable = true;
+    #   cmp = {
+    #     enable = true;
 
-        menu = {
-          nvim_lsp = "[LSP]";
-          nvim_lua = "[api]";
-          path = "[path]";
-          luasnip = "[snip]";
-          buffer = "[buffer]";
-          neorg = "[neorg]";
-        };
-      };
-    };
+    #     menu = {
+    #       nvim_lsp = "[LSP]";
+    #       nvim_lua = "[api]";
+    #       path = "[path]";
+    #       luasnip = "[snip]";
+    #       buffer = "[buffer]";
+    #       neorg = "[neorg]";
+    #     };
+    #   };
+    # };
   };
 }

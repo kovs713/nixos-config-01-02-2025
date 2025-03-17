@@ -74,7 +74,7 @@
     }
     {
       mode = "n";
-      key = "<leader>w";
+      key = "<leader>wk";
       action = "<cmd>bdelete<cr>";
       options = {
         desc = "Delete buffer";

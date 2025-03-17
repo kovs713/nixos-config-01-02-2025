@@ -1,21 +1,10 @@
 {
-  nix.settings = {
-    experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
-  };
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
-  virtualisation = {
-    docker = {
-      enable = true;
-    };
-  };
-
-  nixpkgs.config = {
-		allowUnfree = true;
-		nvidia.acceptLicense = true;
-	};
+  virtualisation.docker.enable = true;
 
   time.timeZone = "Europe/Astrakhan";
 

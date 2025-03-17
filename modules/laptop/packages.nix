@@ -1,5 +1,5 @@
-{ unstable, ... }: {
-  environment.systemPackages = with unstable; [
+{ pkgs, ... }: {
+  environment.systemPackages = with pkgs; [
     brightnessctl
   ];
 }

@@ -4,6 +4,6 @@
     ./desktop
     # ./laptop
 
-    inputs.home-manager.nixosModules.default
+    # inputs.home-manager.nixosModules.default
   ];
 }

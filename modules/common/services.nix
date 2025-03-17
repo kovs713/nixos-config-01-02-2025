@@ -32,6 +32,8 @@
     };
 
     openssh.enable = true;
+    sshd.enable = true;
+    tor.enable = true;
 
     redis = {
       servers = {
@@ -66,7 +68,6 @@
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
-      wireplumber.enable = true;
     };
   };
 }

@@ -5,13 +5,8 @@
     iosevka
     montserrat
     ubuntu-sans
-    (nerdfonts.override {
-      fonts = [
-        "Iosevka"
-        "FiraCode"
-        "JetBrainsMono"
-        "UbuntuSans"
-      ];
-    })
+    nerd-fonts.iosevka
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.ubuntu-sans
   ];
 }
