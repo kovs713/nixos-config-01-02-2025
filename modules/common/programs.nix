@@ -6,18 +6,8 @@
     #   dedicatedServer.openFirewall = true;
     #   localNetworkGameTransfers.openFirewall = true;
     # };
+    zsh.enable = true;
 
-    zsh = {
-      enable = true;
-    };
-
-    dconf = {
-      enable = true;
-    };
-
-    hyprland = {
-      enable = true;
-      xwayland.enable = true;
-    };
+    dconf.enable = true;
   };
 }

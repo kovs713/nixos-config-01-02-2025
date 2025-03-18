@@ -1,8 +1,9 @@
-{ pkgs, ... }: {
+{
   imports = [
     ./nixcord
     ./nixvim
 
+    ./packages.nix
     ./programs
     ./gtk.nix
   ];
@@ -12,8 +13,5 @@
     homeDirectory = "/home/kamusari";
     enableNixpkgsReleaseCheck = false;
     stateVersion = "24.11";
-    packages = with pkgs; [
-      nekoray
-    ];
   };
 }

@@ -1,0 +1,128 @@
+{ pkgs, ... }: {
+  programs.waybar = {
+    enable = true;
+
+    style = pkgs.lib.readFile ./style.css;
+    systemd.enable = true;
+    settings = [
+      {
+        layer = "top";
+        position = "top";
+        height = 20;
+        spacing = 4;
+        passthrough = false;
+
+        modules-left = [
+          "hyprland/workspaces"
+        ];
+        modules-center = [
+          "hyprland/window"
+        ];
+        modules-right = [
+          "pulseaudio"
+          "hyprland/language"
+          "clock"
+          "clock#simpleclock"
+          "tray"
+          # ]
+          # ++ [
+          #   "network"
+          #   "battery"
+        ];
+
+        "hyprland/workspaces" = {
+          "on-click" = "activate";
+          format = "{id}";
+          "all-outputs" = true;
+          "disable-scroll" = false;
+          "active-only" = false;
+        };
+
+        "hyprland/window" = {
+          format = "{title}";
+        };
+
+        "hyprland/language" = {
+          format = " {}";
+          "format-en" = "en";
+          "format-ru" = "ru";
+        };
+
+        battery = {
+          interval = 2;
+          states = {
+            warning = 25;
+            critical = 15;
+          };
+          format = "{icon}{capacity: >3}%";
+          "format-charging" = " {capacity}%";
+          "format-plugged" = " {capacity}%";
+          "format-full" = " {icon}{capacity}%";
+          "format-icons" = [
+            ""
+            ""
+            ""
+            ""
+            ""
+          ];
+        };
+
+        network = {
+          "format-wifi" = "{essid}";
+          "format-ethernet" = "{ifname}: {ipaddr}/{cidr}";
+          "format-linked" = "{ifname} (No IP)";
+          "format-disconnected" = "Disconnected";
+          "format-alt" = "{ifname}: {ipaddr}/{cidr}";
+        };
+
+        pulseaudio = {
+          format = "{icon}  {volume}%";
+          "format-muted" = " Muted";
+          "format-icons" = {
+            headphone = "";
+            "hands-free" = "";
+            headset = "";
+            phone = "";
+            portable = "";
+            car = "";
+            default = [
+              ""
+              ""
+              ""
+            ];
+          };
+          "on-click" = "pavucontrol";
+        };
+
+        tray = {
+          "show-passive-items" = true;
+          spacing = 10;
+        };
+
+        "clock#simpleclock" = {
+          tooltip = false;
+          format = " {:%H:%M}";
+        };
+
+        clock = {
+          format = " {:L%a %d %b}";
+
+          calendar = {
+            format = {
+              days = "<span weight='normal'>{}</span>";
+              months = "<span color='#cdd6f4'><b>{}</b></span>";
+              today = "<span color='#f38ba8' weight='700'><u>{}</u></span>";
+              weekdays = "<span color='#f9e2af'><b>{}</b></span>";
+              weeks = "<span color='#a6e3a1'><b>W{}</b></span>";
+            };
+            mode = "month";
+            "mode-mon-col" = 1;
+            "on-scroll" = 1;
+          };
+
+          "tooltip-format" = "<span color='#cdd6f4' font='Lexend 16'><tt><small>{calendar}</small></tt></span>";
+        };
+      }
+    ];
+  };
+}

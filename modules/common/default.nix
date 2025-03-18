@@ -1,13 +1,14 @@
 {
   imports = [
     ./boot.nix
+    ./env.nix
     ./fonts.nix
     ./gc.nix
     ./home-manager.nix
     ./networking.nix
     ./packages.nix
     ./programs.nix
-    ./services.nix
+    ./services
     ./settings.nix
     ./systemd.nix
     ./users.nix

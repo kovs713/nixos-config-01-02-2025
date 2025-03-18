@@ -1,8 +1,5 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
-    # Terminal
-    ghostty
-
     # General CLI utilities
     cbonsai
     cmatrix
@@ -15,7 +12,6 @@
     wget
     w3m
     yazi
-    zsh
 
     # For make / qmake stuff
     autoconf
@@ -43,19 +39,6 @@
     bibata-cursors
     cliphist
     gruvbox-gtk-theme
-    rofi-wayland
-    waybar
-
-    # Social and etc ...
-    amnezia-vpn
-    google-chrome
-    prismlauncher
-    telegram-desktop
-
-    # LibreOffice
-    libreoffice-qt
-    hunspell
-    hunspellDicts.ru_RU
 
     # Workflow
     jdk21

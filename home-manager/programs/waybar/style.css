@@ -16,40 +16,38 @@
 @define-color base0F #d65d0e;
 
 * {
-	min-height: 0;
-	min-width: 0;
-	font-family: Lexend, "JetBrainsMono";
-	font-size: 14px;
-	font-weight: 800;
+  min-height: 0;
+  min-width: 0;
+  font-family: Lexend, "JetBrainsMono";
+  font-size: 14px;
+  font-weight: 800;
 }
 
 window#waybar {
-	transition-property: background-color;
-	transition-duration: 0.5s;
-	background-color: @base02;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  background-color: @base02;
 }
 
 #workspaces button {
-	padding-left: 0.4rem;
-	padding-right: 0.4rem;
-	/* margin: 0.4rem; */
-	border-radius: 0;
-	/* background-color: @base03; */
-	color: @base06;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  border-radius: 0;
+  color: @base06;
 }
 
 #workspaces button:hover {
-	color: @base03;
-	background-color: @base05;
+  color: @base03;
+  background-color: @base05;
 }
 
 #workspaces button.active {
-	color: @base03;
-	background-color: @base05;
+  color: @base03;
+  background-color: @base05;
 }
 
 #workspaces button.urgent {
-	background-color: @base03;
+  background-color: @base03;
 }
 
 #language,
@@ -57,33 +55,37 @@ window#waybar {
 #tray,
 #window,
 #battery,
+#pulseaudio,
 #network {
-	padding-left: 0.4rem;
-	padding-right: 0.4rem;
-	border-radius: 0;
-	/* background-color: @base03; */
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  border-radius: 0;
 }
 
 #language {
-	color: @base09;
+  color: @base09;
+}
+
+#pulseaudio {
+  color: @base0F;
 }
 
 #clock {
-	color: @base0C;
+  color: @base0C;
 }
 
 #clock.simpleclock {
-	color: @base0D;
+  color: @base0D;
 }
 
 #window {
-	color: @base06;
+  color: @base06;
 }
 
 #network {
-	color: @base0A;
+  color: @base0A;
 }
 
 #battery {
-	color: @base0D;
+  color: @base0D;
 }
