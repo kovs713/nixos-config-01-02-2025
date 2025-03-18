@@ -3,7 +3,6 @@
     ./boot.nix
     ./env.nix
     ./fonts.nix
-    ./gc.nix
     ./home-manager.nix
     ./networking.nix
     ./packages.nix

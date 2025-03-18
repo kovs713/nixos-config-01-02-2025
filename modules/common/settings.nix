@@ -4,6 +4,12 @@
     "flakes"
   ];
 
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+  };
+
   virtualisation.docker.enable = true;
 
   time.timeZone = "Europe/Astrakhan";

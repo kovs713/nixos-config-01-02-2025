@@ -1,4 +1,7 @@
-{
+{ inputs
+, pkgs
+, ...
+}: {
   programs = {
     # steam = {
     #   enable = true;
@@ -7,7 +10,10 @@
     #   localNetworkGameTransfers.openFirewall = true;
     # };
     zsh.enable = true;
-
     dconf.enable = true;
+    hyprland = {
+      enable = true;
+      package = inputs.hyprland.packages.${pkgs.system}.default;
+    };
   };
 }

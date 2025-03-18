@@ -1,8 +1,8 @@
 { pkgs
-, inputs
 , ...
 }: {
   imports = [
+		./env.nix
     ./hyprpaper.nix
     ./input.nix
     ./keybindings.nix
@@ -36,11 +36,17 @@
     brightnessctl
   ];
 
-  wayland.windowManager.hyprland = {
+ wayland.windowManager.hyprland = {
     enable = true;
-
     xwayland.enable = true;
-    systemd.enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+
+    systemd = {
+      enable = true;
+      variables = ["--all"];
+      extraCommands = [
+        "systemctl --user stop graphical-session.target"
+        "systemctl --user start hyprland-session.target"
+      ];
+    };
   };
 }
