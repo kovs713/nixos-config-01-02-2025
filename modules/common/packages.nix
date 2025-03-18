@@ -27,18 +27,7 @@
 
     # Utilities
     home-manager
-    hyprgraphics
-    hyprpaper
-    hyprshot
-    mako
     pavucontrol
-    wl-clipboard
-    xdg-utils
-
-    # GUI / Desktop extras
-    bibata-cursors
-    cliphist
-    gruvbox-gtk-theme
 
     # Workflow
     jdk21

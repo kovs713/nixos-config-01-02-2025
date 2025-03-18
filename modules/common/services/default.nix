@@ -1,6 +1,5 @@
 {
   imports = [
-    ./displayManager.nix
     ./keyd.nix
     ./mongod.nix
     ./pipewire.nix

@@ -1,5 +1,9 @@
-{
+{ pkgs
+, inputs
+, ...
+}: {
   imports = [
+    ./hyprpaper.nix
     ./input.nix
     ./keybindings.nix
     ./launch.nix
@@ -8,27 +12,35 @@
     ./workspaces-windows.nix
   ];
 
+  home.packages = with pkgs; [
+    qt5.qtwayland
+    qt6.qtwayland
+
+    libsForQt5.qt5ct
+    qt6ct
+
+    wl-clipboard
+    wayland-utils
+    wayland-protocols
+    dconf
+
+    hyprgraphics
+    hyprpaper
+    hyprshot
+    mako
+    xdg-utils
+
+    bibata-cursors
+    cliphist
+    gruvbox-gtk-theme
+    brightnessctl
+  ];
+
   wayland.windowManager.hyprland = {
     enable = true;
-  };
 
-  services.hyprpaper = {
-    enable = true;
-
-    settings = {
-      ipc = "on";
-      splash = false;
-      splash_offset = 2.0;
-
-      preload = [
-        "/home/kamusari/nixos-config/wallpapers/Kurumi-Ebisuzawa.png"
-        "/home/kamusari/nixos-config/wallpapers/this-wallpaper-is-not-available.png"
-      ];
-
-      wallpaper = [
-        "DP-1, /home/kamusari/nixos-config/wallpapers/Kurumi-Ebisuzawa.png"
-        "HDMI-A-1, /home/kamusari/nixos-config/wallpapers/this-wallpaper-is-not-available.png"
-      ];
-    };
+    xwayland.enable = true;
+    systemd.enable = true;
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
 }
