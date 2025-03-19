@@ -20,6 +20,7 @@
             _module.args = { inherit inputs; };
           }
           inputs.hm.nixosModules.home-manager
+          inputs.stylix.nixosModules.stylix
           ./modules
         ];
       };
@@ -45,6 +46,10 @@
     hyprland = {
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    stylix = {
+      url = "github:danth/stylix/release-24.11";
     };
 
     nixcord = {

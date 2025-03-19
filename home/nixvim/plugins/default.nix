@@ -2,6 +2,7 @@
   imports = [
     ./bufferline.nix
     ./cmp.nix
+    ./colorizer.nix
     ./lsp.nix
     ./lualine.nix
     ./mini.nix

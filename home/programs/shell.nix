@@ -18,7 +18,7 @@ in
 
       oh-my-zsh = {
         enable = true;
-        theme = "gentoo";
+        theme = "gnzh";
         plugins = [ "git" ];
       };
 

@@ -8,7 +8,6 @@
 
     plugins = with pkgs.tmuxPlugins; [
       gruvbox
-      vim-tmux-navigator
     ];
   };
 }

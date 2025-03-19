@@ -2,10 +2,9 @@
   imports = [
     ./nixcord
     ./nixvim
+    ./programs
 
     ./packages.nix
-    ./programs
-    ./gtk.nix
   ];
 
   home = {

@@ -1,14 +1,14 @@
 {
   imports = [
     ./alacritty
-    ./hyprland
     ./neofetch
     ./rofi
     ./tmux
-    ./waybar
+    ./wayland
 
     ./git.nix
     ./java.nix
+    ./mako.nix
     ./shell.nix
   ];
 
