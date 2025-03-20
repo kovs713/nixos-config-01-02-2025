@@ -42,10 +42,11 @@
     };
 
     colorschemes = {
-      gruvbox = {
+      base16 = {
         enable = true;
+        colorscheme = "gruvbox-dark-hard";
         settings = {
-          transparent_mode = true;
+          telescope_borders = true;
         };
       };
     };

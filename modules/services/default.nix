@@ -6,7 +6,6 @@
     ./sound.nix
     ./xserver.nix
   ];
-
   services = {
     openssh.enable = true;
     sshd.enable = true;

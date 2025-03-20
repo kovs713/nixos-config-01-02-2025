@@ -2,13 +2,12 @@
   programs.rofi = {
     enable = true;
     cycle = false;
-    terminal = "alacrity";
+    terminal = "kitty";
 
     extraConfig = {
       modi = "drun";
       lines = 5;
       show-icons = true;
-      icon-theme = "Papirus-dark";
       drun-display-format = "{icon} {name}";
       disable-history = true;
       hide-scrollbar = true;

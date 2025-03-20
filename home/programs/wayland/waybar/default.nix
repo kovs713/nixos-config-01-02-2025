@@ -8,9 +8,7 @@
       {
         layer = "top";
         position = "top";
-        height = 20;
-        spacing = 4;
-        passthrough = false;
+        height = 30;
 
         modules-left = [
           "hyprland/workspaces"
@@ -19,15 +17,13 @@
           "hyprland/window"
         ];
         modules-right = [
+          # "network"
+          # "battery"
+          "custom/weather"
           "pulseaudio"
           "hyprland/language"
           "clock"
-          "clock#simpleclock"
           "tray"
-          # ]
-          # ++ [
-          #   "network"
-          #   "battery"
         ];
 
         "hyprland/workspaces" = {
@@ -43,9 +39,17 @@
         };
 
         "hyprland/language" = {
-          format = " {}";
-          "format-en" = "en";
-          "format-ru" = "ru";
+          format-en = "🇺🇸";
+          format-ru = "🇷🇺";
+          min-length = 5;
+          tooltip = false;
+        };
+
+        "custom/weather" = {
+          format = " {} ";
+          exec = "curl -s 'wttr.in/Астрахань?format=%c%t'";
+          interval = 300;
+          class = "weather";
         };
 
         battery = {
@@ -99,28 +103,9 @@
           spacing = 10;
         };
 
-        "clock#simpleclock" = {
-          tooltip = false;
-          format = " {:%H:%M}";
-        };
-
         clock = {
-          format = " {:L%a %d %b}";
-
-          calendar = {
-            format = {
-              days = "<span weight='normal'>{}</span>";
-              months = "<span color='#cdd6f4'><b>{}</b></span>";
-              today = "<span color='#f38ba8' weight='700'><u>{}</u></span>";
-              weekdays = "<span color='#f9e2af'><b>{}</b></span>";
-              weeks = "<span color='#a6e3a1'><b>W{}</b></span>";
-            };
-            mode = "month";
-            "mode-mon-col" = 1;
-            "on-scroll" = 1;
-          };
-
-          "tooltip-format" = "<span color='#cdd6f4' font='Lexend 16'><tt><small>{calendar}</small></tt></span>";
+          format = "{:%d.%m.%Y - %H:%M}";
+          format-alt = "{:%A, %B %d at %R}";
         };
       }
     ];

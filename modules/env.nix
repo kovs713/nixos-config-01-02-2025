@@ -1,4 +1,0 @@
-{ lib, ... }: {
-  environment.sessionVariables = rec {
-  };
-}

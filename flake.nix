@@ -20,7 +20,6 @@
             _module.args = { inherit inputs; };
           }
           inputs.hm.nixosModules.home-manager
-          inputs.stylix.nixosModules.stylix
           ./modules
         ];
       };

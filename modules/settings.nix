@@ -3,20 +3,16 @@
     "nix-command"
     "flakes"
   ];
-
   nix.gc = {
     automatic = true;
     dates = "weekly";
     options = "--delete-older-than 7d";
   };
-
   virtualisation.docker.enable = true;
   time.timeZone = "Europe/Astrakhan";
   security.rtkit.enable = true;
-
   i18n = {
     defaultLocale = "en_US.UTF-8";
-
     extraLocaleSettings = {
       LC_ADDRESS = "ru_RU.UTF-8";
       LC_IDENTIFICATION = "ru_RU.UTF-8";

@@ -4,7 +4,7 @@
       "$mainMod" = "SUPER";
 
       bind = [
-        "$mainMod, Q, exec, alacritty"
+        "$mainMod, Q, exec, kitty"
         "$mainMod, M, exec, prismlauncher"
         "$mainMod, D, exec, vivaldi"
         "$mainMod, T, exec, telegram-desktop"

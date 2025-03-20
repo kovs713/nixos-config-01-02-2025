@@ -21,7 +21,6 @@
     wl-clipboard
     dconf
     brightnessctl
-    bibata-cursors
 
     hyprgraphics
     hyprpaper

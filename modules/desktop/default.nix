@@ -4,9 +4,7 @@
 , ...
 }: {
   imports = [
-    (
-      modulesPath + "/installer/scan/not-detected.nix"
-    )
+    (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
   boot = {
@@ -28,9 +26,7 @@
   };
 
   swapDevices = [
-    {
-      device = "/dev/disk/by-uuid/be769778-9157-4a93-8cd8-140dd27dcfc9";
-    }
+    { device = "/dev/disk/by-uuid/be769778-9157-4a93-8cd8-140dd27dcfc9"; }
   ];
 
   networking.useDHCP = lib.mkDefault true;

@@ -12,7 +12,7 @@
 
       windowrulev2 = [
         # Chrome
-        "workspace 1, class:(google-chrome)$"
+        "workspace 1, class:(vivaldi)$"
 
         # Prism Launcher
         "workspace 3, class:(PrismLauncher)$"

@@ -23,6 +23,8 @@
 
     tailwind-tools.enable = true;
 
+    transparent.enable = true;
+
     vim-be-good.enable = true;
 
     wakatime.enable = true;
